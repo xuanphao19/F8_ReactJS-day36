@@ -1,0 +1,30 @@
+.header {
+  padding-inline: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0px 0px 1px rgb(85 80 80 / 72%);
+  background: var(--header-bgr, #ebecec);
+}
+.container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px 0;
+  margin: auto;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.register,
+.login {
+  padding: 10px 16px;
+  border-radius: 4px;
+}
+.login {
+  background: #79f3d274;
+  color: var(--text-color);
+}
