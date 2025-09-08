@@ -1,6 +1,6 @@
 // src/pages/Posts/index.jsx
 import { useEffect, useState } from "react";
-import { Outlet } from "react-router";
+import { Link, Outlet } from "react-router";
 import clsx from "clsx";
 
 import styles from "./Posts.module.scss";
@@ -23,6 +23,15 @@ function Posts({ limit = 5 }) {
 
   return (
     <div className="posts container">
+      <Link
+        to={
+          "https://github.com/xuanphao19/F8_ReactJS-day36/blob/main/src/pages/Posts/index.jsx"
+        }
+        className="repositories"
+        target="_blank"
+        rel="noopener noreferrer">
+        <span>⭐</span> Repositories GitHub
+      </Link>
       <h2 className={clsx(styles.posts_heading)}>Bài Viết Nổi Bật:</h2>
       <Outlet />
       <Pagination totalPages={data.length / limit} visibleDots={5} />

@@ -22,9 +22,11 @@ function Home() {
         {` Học lập trình để đi làm!`}
       </p>
       <div className={clsx(styles.setup_router, "container")}>
-        <h2># Bài 1: Setup Multiple Layouts với React Router</h2>
+        <h2># Bài tập 1: Setup Multiple Layouts với React Router</h2>
         <Link
-          to={"/"}
+          to={
+            "https://github.com/xuanphao19/F8_ReactJS-day36/blob/main/src/Routes/AppRoutes/index.jsx"
+          }
           className="repositories"
           target="_blank"
           rel="noopener noreferrer">

@@ -5,9 +5,13 @@
   width: 200px;
   height: 200px;
 }
+.posts_title,
 .posts_heading {
   font-weight: 600;
   font-size: 3rem;
   padding: 20px;
-  margin-bottom: 20px;
+  margin-block: 20px;
+}
+.posts_title {
+  margin: 0px;
 }
