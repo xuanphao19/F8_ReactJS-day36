@@ -75,9 +75,14 @@ const navData = [
     url: ROUTES.CONTACT,
   },
   {
-    id: "nav_hw_2_1=3",
+    id: "nav_hw_2_3",
     title: "Admin",
     url: ROUTES.DASHBOARD,
+  },
+  {
+    id: "nav_hw_2_6",
+    title: "Notfound",
+    url: "DASHBOARD123",
   },
 ];
 
