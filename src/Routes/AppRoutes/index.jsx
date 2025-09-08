@@ -1,3 +1,5 @@
+// src/Routes/AppRoutes/index.jsx
+
 import { BrowserRouter, Routes, Route } from "react-router";
 import { ROUTES } from "../../config/routes.prefix.js";
 const {
@@ -12,6 +14,9 @@ const {
   DASHBOARD,
   USERS,
   SETTINGS,
+  DETAIL,
+  PAGES_ID,
+  POSTS_ID,
 } = ROUTES;
 
 import Home from "../../pages/Home";
@@ -30,40 +35,40 @@ import ForgotPassword from "./../../pages/ForgotPassword";
 import Dashboard from "./../../pages/Dashboard";
 import Users from "./../../pages/Users";
 import Settings from "./../../pages/Settings";
-import NotFound from "./../../pages/NotFound/index";
+import NotFound from "./../../pages/NotFound";
+import PagesPosts from "./../../pages/Posts/PagesPosts";
 
 function AppRoutes() {
-  // const basename =
-  // import.meta.env.MODE === "production" ? "/ReactJS-Practice-F88/" : "/";
+  const basename =
+    import.meta.env.MODE === "production" ? "/F8_ReactJS-day36/" : "/";
 
   return (
-    // <BrowserRouter basename={basename}>
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route path={ROOT}>
           <Route element={<DefaultLayout />}>
             <Route index element={<Home />} />
-            <Route path={`/${ABOUT}`} element={<About />} />
-            <Route path={`/${POSTS}`}>
-              <Route index element={<Posts />} />
-              <Route path=":id" element={<PostDetail />} />
+            <Route path={`${ABOUT}`} element={<About />} />
+            <Route path={`${POSTS}`} element={<Posts limit={5} />}>
+              <Route index element={<PagesPosts limit={5} />} />
+              <Route path={`${PAGES_ID}`} element={<PagesPosts limit={5} />} />
+              <Route path={`${POSTS_ID}/${DETAIL}`} element={<PostDetail />} />
             </Route>
-            <Route path={`/${CONTACT}`} element={<Contact />} />
-            <Route path={`/${PRIVACY}`} element={<Privacy />} />
+            <Route path={`${CONTACT}`} element={<Contact />} />
+            <Route path={`${PRIVACY}`} element={<Privacy />} />
           </Route>
 
           <Route element={<AuthLayout />}>
-            <Route path={`/${LOGIN}`} element={<Login />} />
-            <Route path={`/${REGISTER}`} element={<Register />} />
-            <Route path={`/${FORGOTPASSWORD}`} element={<ForgotPassword />} />
+            <Route path={`${LOGIN}`} element={<Login />} />
+            <Route path={`${REGISTER}`} element={<Register />} />
+            <Route path={`${FORGOTPASSWORD}`} element={<ForgotPassword />} />
           </Route>
 
           <Route element={<AdminLayout />}>
-            <Route path={`/${DASHBOARD}`}>
-              <Route element={<Dashboard />}>
-                <Route path={`${USERS}`} element={<Users />} />
-                <Route path={`${SETTINGS}`} element={<Settings />} />
-              </Route>
+            <Route path={`${DASHBOARD}`}>
+              <Route index element={<Dashboard />} />
+              <Route path={`${USERS}`} element={<Users />} />
+              <Route path={`${SETTINGS}`} element={<Settings />} />
             </Route>
           </Route>
         </Route>

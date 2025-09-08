@@ -54,18 +54,17 @@ function Register() {
         <Checkbox
           className={clsx(styles.checkbox)}
           id="agree"
-          label="Ghi nhớ User và Password!"
+          label="Đăng nhập sau khi đăng ký thành công!"
         />
 
         <div>
           <Button className={clsx(styles.submit)} type="submit">
-            Login
+            Register
           </Button>
-          <Link to="/forgotpw">Forgot password?</Link>
         </div>
 
         <p className={clsx(styles.register)}>
-          Chưa có tài khoản? <Link to="/register">Đăng ký Account!</Link>
+          Đã có tài khoản? <Link to="/login">Đăng Nhập!</Link>
         </p>
         <Link to="/">Tôi muốn quay lại trang chủ!</Link>
       </Form>

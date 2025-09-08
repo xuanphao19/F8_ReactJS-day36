@@ -1,0 +1,51 @@
+.notfound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+
+  .wrapper {
+    max-width: 500px;
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 8rem;
+    font-weight: 800;
+    margin: 0;
+
+    letter-spacing: 0.3em;
+    background: linear-gradient(30deg, #ff6b6b 25%, #0400ff, #ff5b2e 70%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .message {
+    font-size: 1.25rem;
+    margin: 1rem 0 2rem;
+    line-height: 1.6;
+  }
+
+  .home_btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    background: #9bffb4;
+    color: #764ba2;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+      background: #43ff72;
+      transform: translateY(-2px);
+    }
+  }
+}

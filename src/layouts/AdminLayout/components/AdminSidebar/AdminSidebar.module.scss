@@ -1,0 +1,50 @@
+.sidebar {
+  width: 282px;
+  min-height: calc(100vh - 110px);
+  color: #fff;
+  padding: 160px 16px;
+  transition: width 0.3s;
+  background: var(--footer-bgr, #f8f8f8);
+  flex-shrink: 0;
+
+  &.collapsed {
+    width: 70px;
+  }
+
+  .brand {
+    font-size: 22px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    overflow: hidden;
+    padding: 10px;
+    white-space: nowrap;
+  }
+
+  .nav_admin {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+
+    .item {
+      padding: 10px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: #ddd;
+      transition: background 0.2s;
+
+      &:hover {
+        background: #333;
+        color: #fff;
+      }
+
+      &.active {
+        background: #007bff;
+        color: #fff;
+      }
+    }
+    .nav_collapsed {
+      background: #000;
+    }
+  }
+}

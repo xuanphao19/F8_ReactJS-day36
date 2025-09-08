@@ -18,3 +18,22 @@
 .desc {
   text-align: center;
 }
+
+.setup_router {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.setup_router h2 {
+  padding: 40px 0;
+  text-align: left;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+.router_img {
+  width: 80%;
+  margin: auto;
+}

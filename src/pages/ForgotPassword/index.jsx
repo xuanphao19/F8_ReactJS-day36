@@ -36,9 +36,8 @@ function ForgotPassword() {
 
         <div>
           <Button className={clsx(styles.submit)} type="submit">
-            Login
+            Send Password
           </Button>
-          <Link to="/forgotpw">Forgot password?</Link>
         </div>
 
         <p className={clsx(styles.register)}>

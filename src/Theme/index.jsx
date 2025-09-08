@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Theme() {
+export default function Theme({ className, children, ...prop }) {
   const [theme, setTheme] = useState("");
 
   useEffect(() => {
@@ -19,8 +19,8 @@ export default function Theme() {
   };
 
   return (
-    <button className="toggle-theme" onClick={toggle}>
-      {theme === "dark" ? "🌙" : "☀️"}
+    <button className={`${className} toggle-theme`} onClick={toggle} {...prop}>
+      {theme === "dark" ? "🌙" : "☀️"} {children}
     </button>
   );
 }

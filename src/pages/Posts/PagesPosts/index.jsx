@@ -1,24 +1,23 @@
-// src/pages/PostDetail/index.jsx
+// src/pages/Posts/PagesPosts/index.jsx
 
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router";
 import clsx from "clsx";
 
-import styles from "../Posts/PagesPosts/PagesPosts.module.scss";
-import { API_BASE_URL } from "../../config/api.constants.js";
-import Loading from "../../components/Loading/index.jsx";
+import styles from "./PagesPosts.module.scss";
+import { API_BASE_URL } from "../../../config/api.constants.js";
+import Loading from "../../../components/Loading/index.jsx";
 
-function PostDetail() {
+function PagesPosts({ limit = 5 }) {
   const [posts, setPosts] = useState([]);
-  const { postId } = useParams();
+  const { pageId } = useParams();
 
   useEffect(() => {
     setPosts([]);
     async function fetchBlog() {
-      const blogs = [
-        await fetch(`${API_BASE_URL}/posts/${postId}`).then((r) => r.json()),
-      ];
-
+      const blogs = await fetch(
+        `${API_BASE_URL}/posts?_limit=${limit}&_page=${pageId}`,
+      ).then((r) => r.json());
       blogs.map(async (post) => {
         const author = await fetch("https://randomuser.me/api/").then((r) =>
           r.json(),
@@ -41,8 +40,8 @@ function PostDetail() {
         setPosts((prev) => [...prev, blog]);
       });
     }
-    if (postId) fetchBlog();
-  }, [postId]);
+    fetchBlog();
+  }, [limit, pageId]);
 
   if (!posts.length) return <Loading className={clsx(styles.loading_posts)} />;
 
@@ -97,49 +96,9 @@ function PostDetail() {
 
               <div className={clsx(styles.info)}>
                 <a href="/blog/trai-nghiem-hoc-thu-react-native-devops-c-vo-cung-chat-luong-cung-f8-1">
-                  <h3 className={clsx(styles.title)}>{blog.title}</h3>
+                  <h2 className={clsx(styles.title)}>{blog.title}</h2>
                 </a>
-                <p className={clsx(styles.desc)}>
-                  {blog.body}
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Incidunt, iusto earum quo reiciendis in libero ad magnam ipsam
-                  nesciunt. Natus, iusto? Hic sit, repudiandae nostrum eius, ex
-                  nulla porro necessitatibus fugiat quia, provident non? Et quam
-                  accusantium architecto recusandae eligendi placeat fuga ut,
-                  aliquid minima magnam aperiam ullam quas expedita illo
-                </p>
-                <h3 className={clsx(styles.title)}>{blog.title}</h3>
-                <p className={clsx(styles.desc)}>
-                  {blog.body}
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Incidunt, iusto earum quo reiciendis in libero ad magnam ipsam
-                  nesciunt. Natus, iusto? Hic sit, repudiandae nostrum eius, ex
-                  nulla porro necessitatibus fugiat quia, provident non? Et quam
-                  accusantium architecto recusandae eligendi placeat fuga ut,
-                  aliquid minima magnam aperiam ullam quas expedita illo
-                  repudiandae modi odio perspiciatis porro. Voluptatibus,
-                  veritatis adipisci, tenetur, debitis expedita accusamus eos
-                  quam rerum at possimus ducimus quod! Sunt consequatur, quaerat
-                  tenetur dignissimos in reprehenderit pariatur sapiente fugiat
-                  molestias obcaecati hic veritatis modi rem esse at? Doloribus,
-                  autem atque aperiam dolores repellendus eius
-                </p>
-                <h3 className={clsx(styles.title)}>{blog.title}</h3>
-                <p className={clsx(styles.desc)}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Incidunt, iusto earum quo reiciendis in libero ad magnam ipsam
-                  nesciunt. Natus, iusto? Hic sit, repudiandae nostrum eius, ex
-                  nulla porro necessitatibus fugiat quia, provident non? Et quam
-                  accusantium architecto recusandae eligendi placeat fuga ut,
-                  aliquid minima magnam aperiam ullam quas expedita illo
-                  repudiandae modi odio perspiciatis porro. Voluptatibus,
-                  veritatis adipisci, tenetur, debitis expedita accusamus eos
-                  quam rerum at possimus ducimus quod! Sunt consequatur, quaerat
-                  tenetur dignissimos in reprehenderit pariatur sapiente fugiat
-                  molestias obcaecati hic veritatis modi rem esse at? Doloribus,
-                  autem atque aperiam dolores repellendus eius deleniti porro
-                  corrupti quaerat in.
-                </p>
+                <p className={clsx(styles.desc)}>{blog.body}</p>
               </div>
 
               <div className={clsx(styles.footer)}>
@@ -165,4 +124,4 @@ function PostDetail() {
   );
 }
 
-export default PostDetail;
+export default PagesPosts;

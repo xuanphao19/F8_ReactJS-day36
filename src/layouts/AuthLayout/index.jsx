@@ -10,8 +10,10 @@ function AuthLayout() {
     <>
       <Header />
       <div className={clsx(styles.auth, "container")}>
-        <AuthSidebar />
-        <Outlet />
+        <AuthSidebar className={clsx(styles.sidebar_content)} />
+        <div className={clsx(styles.auth_content)}>
+          <Outlet />
+        </div>
       </div>
       <ScrollToTop />
     </>

@@ -1,5 +1,7 @@
 import clsx from "clsx";
+import { Link } from "react-router";
 import styles from "./Home.module.scss";
+import SetupRouter from "../../../public/SetupRouter.png";
 
 function Home() {
   return (
@@ -19,6 +21,22 @@ function Home() {
         </a>
         {` Học lập trình để đi làm!`}
       </p>
+      <div className={clsx(styles.setup_router, "container")}>
+        <h2># Bài 1: Setup Multiple Layouts với React Router</h2>
+        <Link
+          to={"/"}
+          className="repositories"
+          target="_blank"
+          rel="noopener noreferrer">
+          <span>⭐</span> Repositories GitHub
+        </Link>
+
+        <img
+          className={clsx(styles.router_img)}
+          src={`${SetupRouter}`}
+          alt=""
+        />
+      </div>
     </>
   );
 }

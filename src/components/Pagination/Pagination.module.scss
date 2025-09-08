@@ -1,0 +1,54 @@
+.pagination {
+  display: flex;
+  position: absolute;
+  bottom: -68px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 8px;
+}
+.button {
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  color: #00ac17;
+  transition: background 0.2s ease;
+}
+.button svg {
+  width: 26px;
+  height: 26px;
+}
+
+.button:hover:not(.disabled) {
+  background: #e6e6e6;
+  color: #ac5900;
+}
+.button.disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed;
+}
+
+.dot {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+.dot:hover {
+  background: #f0f0f0;
+}
+.dot.active {
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+  border-color: #007bff;
+}

@@ -1,0 +1,133 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 16px;
+  border-bottom: 1px solid #dddddd28;
+  background: var(--header-bgr, #f8f8f8);
+  z-index: 9999;
+
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0px 20px 0 0;
+    cursor: pointer;
+
+    .toggle {
+      background: none;
+      border: none;
+      font-size: 20px;
+      padding: 4px 8px;
+      color: var(--text-color);
+      border-radius: 4px;
+    }
+    &:hover {
+      background: #9c9a9a67;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-color);
+    }
+  }
+
+  .search {
+    flex: 1;
+    margin: 0 20px;
+    max-width: 400px;
+
+    input {
+      width: 100%;
+      padding: 6px 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+
+      &:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+    }
+  }
+
+  .user {
+    position: relative;
+
+    .user_btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border: none;
+      background: var(--bs-link-color);
+      cursor: pointer;
+      transition: background 0.2s linear;
+
+      &:hover {
+        background: #f5f5f5;
+      }
+    }
+
+    .avatar {
+      display: inline-flex;
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+
+    .name {
+      display: inline-flex;
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+      margin-left: 6px;
+    }
+
+    .dropdown {
+      position: absolute;
+      right: 0;
+      top: 110%;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      min-width: 150px;
+      background: var(--header-bgr, #f8f8f8);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      padding: 10px 0;
+      z-index: 100;
+
+      .admin_theme {
+        color: var(--text-color);
+        width: 100%;
+      }
+      button {
+        padding: 8px 12px;
+        text-align: left;
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 14px;
+        border-radius: 0;
+        margin-bottom: 4px;
+        color: var(--text-color);
+        transition: background 0.2s linear;
+
+        &:hover {
+          background: #f5f5f534;
+        }
+
+        &.logout {
+          color: red;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
