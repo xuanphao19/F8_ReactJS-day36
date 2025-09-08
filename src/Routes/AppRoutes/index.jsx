@@ -16,6 +16,7 @@ const {
   SETTINGS,
   DETAIL,
   PAGES_ID,
+  NOTFOUND,
 } = ROUTES;
 
 import Home from "../../pages/Home";
@@ -58,20 +59,20 @@ function AppRoutes() {
           </Route>
 
           <Route element={<AuthLayout />}>
-            <Route path={`${LOGIN}`} element={<Login />} />
-            <Route path={`${REGISTER}`} element={<Register />} />
-            <Route path={`${FORGOTPASSWORD}`} element={<ForgotPassword />} />
+            <Route path={LOGIN} element={<Login />} />
+            <Route path={REGISTER} element={<Register />} />
+            <Route path={FORGOTPASSWORD} element={<ForgotPassword />} />
           </Route>
 
           <Route element={<AdminLayout />}>
-            <Route path={`${DASHBOARD}`}>
+            <Route path={DASHBOARD}>
               <Route index element={<Dashboard />} />
-              <Route path={`${USERS}`} element={<Users />} />
-              <Route path={`${SETTINGS}`} element={<Settings />} />
+              <Route path={USERS} element={<Users />} />
+              <Route path={SETTINGS} element={<Settings />} />
             </Route>
           </Route>
         </Route>
-        <Route path={`${ROOT}*`} element={<NotFound />} />
+        <Route path={NOTFOUND} element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

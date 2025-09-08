@@ -13,6 +13,7 @@ export const ROUTES = {
   PRIVACY: "privacy",
   DETAIL: ":postId/detail",
   PAGES_ID: ":pageId",
+  NOTFOUND: "/*",
 
   PRODUCTS: "products",
   PROFILE: "profile",
