@@ -16,7 +16,6 @@ const {
   SETTINGS,
   DETAIL,
   PAGES_ID,
-  POSTS_ID,
 } = ROUTES;
 
 import Home from "../../pages/Home";
@@ -48,14 +47,14 @@ function AppRoutes() {
         <Route path={ROOT}>
           <Route element={<DefaultLayout />}>
             <Route index element={<Home />} />
-            <Route path={`${ABOUT}`} element={<About />} />
-            <Route path={`${POSTS}`} element={<Posts limit={5} />}>
+            <Route path={ABOUT} element={<About />} />
+            <Route path={POSTS} element={<Posts limit={5} />}>
               <Route index element={<PagesPosts limit={5} />} />
-              <Route path={`${PAGES_ID}`} element={<PagesPosts limit={5} />} />
-              <Route path={`${POSTS_ID}/${DETAIL}`} element={<PostDetail />} />
+              <Route path={PAGES_ID} element={<PagesPosts limit={5} />} />
+              <Route path={DETAIL} element={<PostDetail />} />
             </Route>
-            <Route path={`${CONTACT}`} element={<Contact />} />
-            <Route path={`${PRIVACY}`} element={<Privacy />} />
+            <Route path={CONTACT} element={<Contact />} />
+            <Route path={PRIVACY} element={<Privacy />} />
           </Route>
 
           <Route element={<AuthLayout />}>

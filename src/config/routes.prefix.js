@@ -11,9 +11,8 @@ export const ROUTES = {
   SETTINGS: "settings",
   CONTACT: "contact",
   PRIVACY: "privacy",
-  DETAIL: "detail",
+  DETAIL: ":postId/detail",
   PAGES_ID: ":pageId",
-  POSTS_ID: ":postId",
 
   PRODUCTS: "products",
   PROFILE: "profile",

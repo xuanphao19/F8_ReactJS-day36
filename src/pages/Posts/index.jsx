@@ -23,6 +23,9 @@ function Posts({ limit = 5 }) {
 
   return (
     <div className="posts container">
+      <h2 className={clsx(styles.posts_title)}>
+        # Bài tập 2: Posts List với Pagination & API Integration
+      </h2>
       <Link
         to={
           "https://github.com/xuanphao19/F8_ReactJS-day36/blob/main/src/pages/Posts/index.jsx"
