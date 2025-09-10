@@ -1,6 +1,7 @@
 // src/Routes/AppRoutes/index.jsx
 
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router";
+
 import { ROUTES } from "../../config/routes.prefix.js";
 const {
   ROOT,
@@ -50,10 +51,13 @@ function AppRoutes() {
             <Route index element={<Home />} />
             <Route path={ABOUT} element={<About />} />
             <Route path={POSTS} element={<Posts limit={5} />}>
-              <Route index element={<PagesPosts limit={5} />} />
+              <Route index element={<Navigate to="1" replace />} />
+              {/* Nếu chưa Login thì yêu cầu Login:
+               <Route index element={<Navigate to="/login" replace />} /> */}
               <Route path={PAGES_ID} element={<PagesPosts limit={5} />} />
               <Route path={DETAIL} element={<PostDetail />} />
             </Route>
+
             <Route path={CONTACT} element={<Contact />} />
             <Route path={PRIVACY} element={<Privacy />} />
           </Route>
